@@ -20,7 +20,7 @@ def _load_data():
     fuel["distance_km"] = fuel.groupby("vehicle_id")["distance_km"].ffill()
     fuel["km_per_gallon"] = fuel["distance_km"] / fuel["gallons"].replace(0, np.nan)
 
-    maint = pd.read_csv("data/fleet_maintenance_log.csv")
+    maint = pd.read_csv("Fleet_Analysis/data/fleet_maintenance_log.csv")
     maint["event_date"] = pd.to_datetime(maint["event_date"])
     return fuel, maint
 
