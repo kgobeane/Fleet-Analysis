@@ -26,7 +26,7 @@ def _load_model():
 @st.cache_data
 def _load_and_engineer():
     """Full pipeline from notebook Cells 2-7."""
-    df = pd.read_csv("data/fleet_maintenance_log.csv")
+    df = pd.read_csv("Fleet_Analysis/data/fleet_maintenance_log.csv")
     df["event_date"]          = pd.to_datetime(df["event_date"])
     df["vehicle_id"]          = df["vehicle_id"].astype("string")
     df["vehicle_type"]        = df["vehicle_type"].astype("category")
