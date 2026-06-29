@@ -11,7 +11,7 @@ import plotly.express as px
 
 @st.cache_data
 def _load_data():
-    fuel = pd.read_csv("data/fleet_fuel_weekly.csv")
+    fuel = pd.read_csv("Fleet_Analysis/data/fleet_fuel_weekly.csv")
     fuel["week_start"] = pd.to_datetime(fuel["week_start"])
     for col in ["vehicle_id","vehicle_type","fuel_type"]:
         fuel[col] = fuel[col].str.strip().str.upper()
