@@ -53,8 +53,8 @@ def _build_weekly(fuel):
 
 @st.cache_resource
 def _load_model():
-    model    = joblib.load("models/fuel_forecast_model.pkl")
-    features = joblib.load("models/forecast_features.pkl")
+    model    = joblib.load("Fleet_Analysis/models/fuel_forecast_model.pkl")
+    features = joblib.load("Fleet_Analysis/models/forecast_features.pkl")
     # Normalise: notebook saved features as a plain list
     if isinstance(features, dict):
         features = features.get("features", list(features.keys()))
