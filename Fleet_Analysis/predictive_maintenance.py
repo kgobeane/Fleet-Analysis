@@ -15,8 +15,8 @@ import plotly.graph_objects as go
 
 @st.cache_resource
 def _load_model():
-    model    = joblib.load("models/maintenance_model.pkl")
-    features = joblib.load("models/maintenance_features.pkl")
+    model    = joblib.load("Fleet_Analysis/models/maintenance_model.pkl")
+    features = joblib.load("Fleet_Analysis/models/maintenance_features.pkl")
     # Normalise: might be list or dict
     if isinstance(features, dict):
         features = features.get("feature_columns", list(features.keys()))
