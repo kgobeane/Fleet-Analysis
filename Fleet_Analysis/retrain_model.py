@@ -31,7 +31,7 @@ print("=" * 60)
 print("PART 1: Training Fuel Forecast Model (LinearRegression)")
 print("=" * 60)
 
-fuel = pd.read_csv("data/fleet_fuel_weekly.csv")
+fuel = pd.read_csv("Fleet_Analysis/data/fleet_fuel_weekly.csv")
 fuel["week_start"] = pd.to_datetime(fuel["week_start"])
 
 for col in ["vehicle_id", "vehicle_type", "fuel_type"]:
@@ -113,7 +113,7 @@ print("=" * 60)
 print("PART 2: Training Maintenance Model (GradientBoostingRegressor)")
 print("=" * 60)
 
-maint = pd.read_csv("data/fleet_maintenance_log.csv")
+maint = pd.read_csv("Fleet_Analysis/data/fleet_maintenance_log.csv")
 maint["event_date"]          = pd.to_datetime(maint["event_date"])
 maint["vehicle_id"]          = maint["vehicle_id"].astype("string")
 maint["vehicle_type"]        = maint["vehicle_type"].astype("category")
